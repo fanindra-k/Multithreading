@@ -1,5 +1,7 @@
 package multithreading;
-
+/*
+If there are multiple threads then use notify all
+ */
 
 class SharedResource{
     private int data;
