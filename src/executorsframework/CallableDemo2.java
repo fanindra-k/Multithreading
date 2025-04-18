@@ -65,6 +65,20 @@ public class CallableDemo2 {
             }
 
         }
+        /*
+        It returns result of first completed task
+        If one task finishes, others are cancelled (if they haven't completed yet).
+        If all tasks fail (throw exceptions), invokeAny() throws an exception.
+         */
+        try {
+            System.out.println("Running InvokeAny() method");
+            var result = executorService.invokeAny(callables);
+            System.out.println(result);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } catch (ExecutionException e) {
+            throw new RuntimeException(e);
+        }
         executorService.shutdown();
 
     }

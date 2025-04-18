@@ -14,6 +14,9 @@ public class ThreadLifeCycle extends Thread{
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println(Thread.currentThread().getName()+" starts execution");
+        /*
+           new Thread() → only creates Java object; start() → creates real system thread and runs the code in parallel.
+         */
         Thread thread = new ThreadLifeCycle();
         System.out.println("Current of Thread 0 is : "+thread.getState());
         thread.start();
